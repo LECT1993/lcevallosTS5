@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lcevallosTS5.MainPage">
+
+    <StackLayout>
+
+        <Label Text="CONSUMO DE SERVICIO WEB" FontSize="20" HorizontalTextAlignment="Center"/>
+        <Label Text="VEHICULOS" FontSize="15" HorizontalTextAlignment="Center" TextColor="DarkBlue"/>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="ID" TextColor="Red" FontSize="14" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
+            <Label Text="MARCA" TextColor="Red" FontSize="14" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"/>
+            <Label Text="MODELO" TextColor="Red" FontSize="14" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"/>
+            <Label Text="COLOR" TextColor="Red" FontSize="14" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center"/>
+            <Label Text="PLACA" TextColor="Red" FontSize="14" Grid.Row="0" Grid.Column="4" HorizontalOptions="Center"/>
+            <Label Text="TIPO" TextColor="Red" FontSize="14" Grid.Row="0" Grid.Column="5" HorizontalOptions="Center"/>
+
+        </Grid>
+
+        <ListView x:Name="listaVehiculos">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding id_vehiculo}" TextColor="Black" FontSize="14" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
+                                <Label Text="{Binding marca}" TextColor="Black" FontSize="14" Grid.Row="0" Grid.Column="1"/>
+                                <Label Text="{Binding modelo}" TextColor="Black" FontSize="14" Grid.Row="0" Grid.Column="2"/>
+                                <Label Text="{Binding color}" TextColor="Black" FontSize="14" Grid.Row="0" Grid.Column="3" />
+                                <Label Text="{Binding placa}" TextColor="Black" FontSize="14" Grid.Row="0" Grid.Column="4"/>
+                                <Label Text="{Binding tipo_vehiculo}" TextColor="Black" FontSize="14" Grid.Row="0" Grid.Column="5" />
+
+                            </Grid>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="btnMostrar" Text="MOSTRAR" Clicked="btnMostrar_Clicked" />
+
+    </StackLayout>
+
+</ContentPage>
